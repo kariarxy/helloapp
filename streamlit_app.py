@@ -1,3 +1,12 @@
+def read_sql_query(sql, db):
+    conn = sqlite3.connect(db)
+    cur = conn.cursor()
+    cur.execute(sql)
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    conn.close()
+
 import streamlit as st
 import pandas as pd
 import sqlite3
